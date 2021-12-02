@@ -4,3 +4,5 @@
 <p>Go to https://github.com/ghitl-mezba/ExpenseTrackerApp.git</p>
 <h4>Step 2</h4>
 <p>Download or Clone the repository</p>
+<h4>Step 3</h4>
+<p>Go to main folder of the project & edit appsettings.json with your credentials</p>
