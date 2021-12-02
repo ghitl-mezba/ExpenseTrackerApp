@@ -10,3 +10,6 @@
 <p>Go to Tools-> NuGet Package Manager-> Package Manger Console</p>
 <p>Write or copy <strong>EntityFrameworkCore\Add-Migration v1</strong> then enter press</p>
 <p>Write or copy <strong>EntityFrameworkCore\update-database</strong> then enter press</p>
+<h4>Step 5</h4>
+<p>Run project and go to your browser</p>
+<p>Type User name: <strong>admin</strong> & password <strong>1234</strong></p>
