@@ -1,0 +1,49 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="container">
+
+    <div class="row">
+
+        <div class="col-md-3 card_div">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Dashboard"><strong><i class="fa fa-home"></i> Go Dashboard</strong></a>
+        </div>
+
+        <div class="col-md-3 card_div">
+            <a class="nav-link text-dark" asp-area="" asp-controller="ExpenseCategory" asp-action="Index"><strong><i class="fa fa-list"></i> Go Expense Category</strong></a>
+        </div>
+
+        <div class="col-md-3 card_div">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Expense" asp-action="Entry"><strong><i class="fa fa-share-square-o"></i> Go Expense Entry</strong></a>
+        </div>
+
+        <div class="col-md-3 card_div">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Expense" asp-action="Index"><strong><i class="fa fa-search"></i> Go Expense Search</strong></a>
+        </div>
+
+
+        <div class="col-md-3 card_div">
+            <i class="fa fa-bar-chart-o"></i><strong> Total Expenditure : @ViewBag.TotalAmount</strong>
+        </div>
+
+        <div class="col-md-3 card_div">
+            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Logout"><strong><i class="fa fa-sign-out"></i> Go Logout</strong></a>
+        </div>
+
+    </div>
+</div>
+
+<style>
+    .card_div {
+        border: 1px solid #ddd;
+        padding: 20px;
+        box-shadow: 0px 0px 5px #ccc;
+        margin: 10px;
+    }
+    .card_div:hover {
+        border: 1px solid #ddd;
+        padding: 20px;
+        box-shadow: 0px 0px 0px #ccc;
+    }
+</style>

@@ -1,0 +1,108 @@
+﻿@model IEnumerable<ExpenseTrackerApp.Models.ExpenseVM>
+
+
+@{
+    ViewData["Title"] = "Expense List Page";
+
+    var fromDate = DateTime.Today.AddDays(-10);
+    var toDate = DateTime.Today;
+}
+
+<div class="container">
+
+
+
+
+
+    <div class="row">
+        <div class="col-md-4" style="border: 1px solid #ddd; box-shadow: 0px 0px 5px #ccc; padding: 10px;">
+            <div>
+                @if (@ViewBag.Msg != null)
+                {
+                    <div class="alert alert-success alert-dismissible">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>@ViewBag.Msg</strong>
+                    </div>
+                }
+            </div>
+            <br>
+            <h4 style="padding-bottom: 10px"><i class="fa fa-search"></i> Expense Search Form</h4>
+            <form asp-action="Index">
+
+                <div class="form-group">
+                    <label class="control-label" style="font-weight: bold">From Date <span style="color: #ff0000">*</span></label>
+                    <input name="FromDate" type="date" class="form-control" value="@fromDate.ToString("yyyy-MM-dd")"/>
+                </div>
+
+                <div class="form-group">
+                    <label class="control-label" style="font-weight: bold">To Date <span style="color: #ff0000">*</span></label>
+                    <input name="ToDate" type="date" class="form-control" value="@toDate.ToString("yyyy-MM-dd")" />
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary"><i class="fa fa-search"></i> Search</button>
+                </div>
+            </form>
+        </div>
+
+        @if (Model != null)
+        {
+        <div class="col-md-8">
+            <div class="table-responsive">
+                <table class="table table-bordered table-striped">
+                    <thead style="background: #1b6ec2; color: #ffffff;">
+                        <tr>
+                            <th>
+                                SL
+                            </th>
+                            <th>
+                                Expenses Category
+                            </th>
+                            <th>
+                                Expenses Date
+                            </th>
+                            <th>
+                                Expenses Amount
+                            </th>
+                            <th class="text-center">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{
+                            int serial = 1;
+                            decimal total = 0;
+                         }
+                        @foreach (var item in Model)
+                        {
+
+                            <tr>
+                                <td>
+                                    @serial
+                                </td>
+                                <td>@item.expCatVM.CategoryName</td>
+                                <td>@item.expVM.ExpenseDate.ToString("dd/MM/yyyy")</td>
+                                <td>@item.expVM.ExpenseAmount</td>
+                                <td class="text-center">
+                                    <a asp-action="Edit" asp-route-id="@item.expVM.ID" class="btn btn-success"><i class="fa fa-edit"></i> Edit</a>
+                                    <a asp-action="Delete" asp-route-id="@item.expVM.ID" class="btn btn-danger" onclick="return confirm('Are you sure want to delete this record?')">
+                                        <i class="fa fa-trash"></i> Delete
+                                    </a>
+                                </td>
+                            </tr>
+                            serial ++;
+                            total += @item.expVM.ExpenseAmount;
+                        }
+
+                    </tbody>
+                    <tfoot>
+                        <tr>
+                            <td colspan="3" class="text-right"><strong>Grand Total</strong></td>
+                            <td colspan="2"><strong>@total</strong></td>
+                        </tr>
+                    </tfoot>
+                </table>
+            </div>
+        </div>
+        }
+      </div>
+ </div>

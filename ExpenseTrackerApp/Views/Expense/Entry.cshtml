@@ -1,0 +1,65 @@
+﻿@model ExpenseTrackerApp.Models.Expense
+
+@{
+    ViewData["Title"] = "Expense Create Page";
+}
+
+
+
+<div class="container">
+    <div class="row">
+  
+        <div class="col-md-6" style="border: 1px solid #ddd; box-shadow: 0px 0px 5px #ccc; padding: 20px;">
+            <div>
+                @if (@ViewBag.Msg != null)
+                {
+                    <div class="alert alert-success alert-dismissible">
+                        <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                        <strong>@ViewBag.Msg</strong>
+                    </div>
+                }
+            </div>
+            <br>
+            <h4 style="padding-bottom: 30px"><i class="fa fa-share-square-o"></i> Expense Entry Form</h4>
+            <form asp-action="Entry">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+
+                <div class="form-group">
+                    <label asp-for="ExpenseCategory" class="control-label" style="font-weight: bold">Category Name <span style="color: #ff0000">*</span></label>
+                    <select class="form-control" asp-for="ExpenseCategory">
+                        <option value="">Select a category</option>
+                        @foreach (var item in ViewBag.ExpenseCategoryDDList)
+                        {
+                            <option value="@item.ID"> @item.CategoryName</option>
+                        }
+                    </select>
+                    <span asp-validation-for="ExpenseCategory" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="ExpenseDate" class="control-label" style="font-weight: bold">Expense Date <span style="color: #ff0000">*</span></label>
+                    <input asp-for="ExpenseDate" type="date" class="form-control" max="@DateTime.Today.ToString("yyyy-MM-dd")" />
+                    <span asp-validation-for="ExpenseDate" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <label asp-for="ExpenseAmount" class="control-label" style="font-weight: bold">Expense Amount <span style="color: #ff0000">*</span></label>
+                    <input asp-for="ExpenseAmount" type="number" class="form-control" placeholder="Example: 5000" />
+                    <span asp-validation-for="ExpenseAmount" class="text-danger"></span>
+                </div>
+
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
+                    <a asp-action="Index" class="btn btn-danger"><i class="fa fa-backward"></i> Back to All Expenses</a>
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+
+
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

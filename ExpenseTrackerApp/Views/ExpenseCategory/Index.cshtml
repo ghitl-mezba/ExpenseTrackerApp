@@ -1,0 +1,65 @@
+﻿@model IEnumerable<ExpenseTrackerApp.Models.ExpenseCategory>
+
+@{
+    ViewData["Title"] = "Expense Category List Page";
+}
+
+<div class="container">
+
+
+
+
+    <div>
+        @if (@ViewBag.Msg != null)
+        {
+            <div class="alert alert-success alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>@ViewBag.Msg</strong>
+            </div>
+        }
+    </div>
+    <br>
+
+    <div>
+        <a asp-action="Create" class="btn btn-primary"><i class="fa fa-plus"></i> Add New Expenses Category</a>
+    </div>
+    <br>
+
+    <div class="table-responsive">
+        <table class="table table-bordered table-striped">
+            <thead style="background: #1b6ec2; color: #ffffff;">
+                <tr>
+                    <th>
+                        SL
+                    </th>
+                    <th>
+                        Expenses Category Name
+                    </th>
+                    <th class="text-center">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                @{int serial = 1;}
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>
+                            @serial
+                        </td>
+                        <td>
+                            @Html.DisplayFor(modelItem => item.CategoryName)
+                        </td>
+                        <td class="text-center">
+                            <a asp-action="Edit" asp-route-id="@item.ID" class="btn btn-success"><i class="fa fa-edit"></i> Edit</a>
+                            <a asp-action="Delete" asp-route-id="@item.ID" class="btn btn-danger" onclick="return confirm('Are you sure want to delete this record?')">
+                                <i class="fa fa-trash"></i> Delete
+                            </a>
+                        </td>
+                    </tr>
+                    serial++;
+                }
+
+            </tbody>
+        </table>
+    </div>
+</div>

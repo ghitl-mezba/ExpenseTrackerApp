@@ -1,0 +1,51 @@
+﻿@{
+    ViewData["Title"] = "Login Page";
+    Layout = null;
+}
+<title>@ViewData["Title"] - ExpenseTrackerApp</title>
+<link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+<link href="~/css/font-awesome.min.css" rel="stylesheet" />
+<link rel="stylesheet" href="~/css/site.css" />
+<link rel="icon" type="image/x-icon" href="~/img/favicon.png">
+
+<div class="col-md-3" style="border: 1px solid #ddd; box-shadow: 0px 0px 5px #ccc; position: relative; left: 35%; top: 20%;padding: 30px;">
+    <div>
+        @if (@ViewBag.Msg != null)
+        {
+            <div class="alert alert-danger alert-dismissible">
+                <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                <strong>@ViewBag.Msg</strong>
+            </div>
+        }
+    </div>
+    <br>
+    <form asp-action="Login">
+        <img style="background-color: #1a467a;" src="~/img/logo.png" />
+        <h4>Expense Tracker App - Login Area</h4>
+        <br>
+        <div class="form-group">
+            <input type="text" name="UserName" class="form-control" placeholder="Enter user name" required>
+        </div>
+        <div class="form-group">
+            <input type="password" name="UserPassword" class="form-control" placeholder="Enter password" required>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-primary"><i class="fa fa-sign-in"></i> Login</button>
+            <hr />
+            <strong>User Name:</strong> admin<br />
+            <strong>Password:</strong> 1234
+        </div>
+    </form>
+
+
+</div>
+
+<footer class="border-top footer text-muted">
+    <div class="container">
+        &copy; 2021 - ExpenseTrackerApp - <a href="https://www.excelbd.com/" target="_blank">Excel Technologies Ltd</a>
+    </div>
+</footer>
+<script src="~/lib/jquery/dist/jquery.min.js"></script>
+<script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+<script src="~/js/site.js" asp-append-version="true"></script>
+
