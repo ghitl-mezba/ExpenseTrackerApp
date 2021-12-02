@@ -13,3 +13,4 @@
 <h4>Step 5</h4>
 <p>Run project and go to your browser</p>
 <p>Type User name: <strong>admin</strong> & password <strong>1234</strong> and click <strong>Login</strong></p>
+<p>After successfully login you will see a dashboard with some dummy data</p>
