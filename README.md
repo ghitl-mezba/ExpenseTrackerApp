@@ -11,6 +11,6 @@
 <p>1. Write or copy <strong>EntityFrameworkCore\Add-Migration v1</strong> then enter press</p>
 <p>2. Write or copy <strong>EntityFrameworkCore\update-database</strong> then enter press</p>
 <h4>Step 5</h4>
-<p>1. Run project and go to your browser</p>
+<p>1. Run the project and go to your browser</p>
 <p>2. Type User name: <strong>admin</strong> & password <strong>1234</strong> and click <strong>Login</strong></p>
 <p>3. After successfully login you will see a dashboard with some dummy data</p>
