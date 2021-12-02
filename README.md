@@ -8,8 +8,8 @@
 <p>Go to main folder of the project & edit <strong>appsettings.json</strong> with your credentials using visual studio</p>
 <h4>Step 4</h4>
 <p>Go to Tools-> NuGet Package Manager-> Package Manger Console</p>
-<p>Write or copy <strong>EntityFrameworkCore\Add-Migration v1</strong> then enter press</p>
-<p>Write or copy <strong>EntityFrameworkCore\update-database</strong> then enter press</p>
+<p>1. Write or copy <strong>EntityFrameworkCore\Add-Migration v1</strong> then enter press</p>
+<p>2. Write or copy <strong>EntityFrameworkCore\update-database</strong> then enter press</p>
 <h4>Step 5</h4>
 <p>Run project and go to your browser</p>
-<p>Type User name: <strong>admin</strong> & password <strong>1234</strong></p>
+<p>Type User name: <strong>admin</strong> & password <strong>1234</strong> and click <strong>Login</strong></p>
