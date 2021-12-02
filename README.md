@@ -14,3 +14,8 @@
 <p>1. Run the project and go to your browser</p>
 <p>2. Type User name: <strong>admin</strong> & password <strong>1234</strong> and click <strong>Login</strong></p>
 <p>3. After successfully login you will see a dashboard with some dummy data</p>
+<p>4. If you click Expense Category link you will see all expense category</p>
+<p>5. You can Add, Edit & Delete any category. Note: You can not add any duplicate category</p>
+<p>6. If you click Expense Entry you will see expense entry interface. Note: Any future expense date is not alloed to select from calender</p>
+<p>7. If you click Expense Search you will see expense search interface. Note: By default from date is set 10 days later from today & to day is current date</p>
+<p>8. You can Edit, Delete any expense entry</p>
